@@ -5,8 +5,16 @@
     "ng": "ng",
     "start": "ng serve -o",
     "build": "ng build",
+    "__comentario1__":"build:href modifica la ruta href en la etiqueta base",
+    "build:href": "ng build --base-href ./",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "__comentario2__":"delete:docs elimina el contenido de la carpeta indicada ejm carpeta docs",
+    "delete:docs": "del docs",
+    "__comentario3__":"copy:dist copia los archivos de una carpeta a otra seleccionando sus rutas el -f es para no crear duplicados de la carpeta",
+    "copy:dist":"copyfiles dist/base/* ./docs -f",
+    "__Comentario__":"build:github junta los 3 script que creamos para ejecutarse al mismo tiempo",
+    "build:github":"npm run delete:docs && npm run build:href && npm run copy:dist"
   },
   "private": true,
   "dependencies": {
@@ -29,6 +37,8 @@
     "@angular/compiler-cli": "^16.1.0",
     "@types/jasmine": "~4.3.0",
     "@types/uuid": "^9.0.2",
+    "copyfiles": "^2.4.1",
+    "del-cli": "^5.0.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
